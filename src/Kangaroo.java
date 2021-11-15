@@ -1,4 +1,4 @@
-public class Kangaroo implements Jampable{
+public class Kangaroo implements JumpRunnable{
 private String name;
 
 Kangaroo(String name){
@@ -8,4 +8,10 @@ Kangaroo(String name){
     public void jump() {
         System.out.println(name + " jump!");
     }
+
+    @Override
+    public void run(int dist) {
+        System.out.println(name + " run " + dist + " meter");
+    }
 }
+
