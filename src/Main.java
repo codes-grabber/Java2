@@ -21,6 +21,7 @@ public class Main {
         for (int i = 0; i< jr.length; i++){
             jr[i].jump();
             jr[i].run(5);
+            jr[i].superJump();
         }
 
 

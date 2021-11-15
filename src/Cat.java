@@ -14,4 +14,9 @@ public class Cat implements JumpRunnable{
     public void run(int dist) {
         System.out.println(name + " run " + dist + " метров");
     }
+
+    @Override
+    public void superJump() {
+        System.out.println(name + " SUPER JUMP!!");
+    }
 }
