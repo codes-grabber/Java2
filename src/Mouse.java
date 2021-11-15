@@ -1,4 +1,4 @@
-public class Mouse implements Jampable{
+public class Mouse{
 
     private  String name;
 
@@ -6,7 +6,4 @@ public class Mouse implements Jampable{
         this.name = name;
     }
 
-    public void jump() {
-        System.out.println(name + " jump!");
-    }
 }

@@ -11,11 +11,23 @@ public class Main {
         for (int i = 0; i< jampables.length; i++){
             jampables[i].jump();
         }
+
+        JumpRunnable[] jr = {
+                new Cat("murzik"),
+                new Cat("Vasia"),
+                new Kangaroo("zusa")
+        };
+
+        for (int i = 0; i< jr.length; i++){
+            jr[i].jump();
+            jr[i].run(5);
+        }
+
+
+
         tryJump(cat);
         tryRun(cat, 5);
 
-        Mouse m = new Mouse("Jerry");
-        tryJump(m);
     }
 
     static void tryRunAndJump (JumpRunnable r, int distance){

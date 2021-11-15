@@ -1,6 +1,4 @@
 public interface Runnanle {
 
-    default void run(int dist){
-
-    }
+    void run(int dist);
 }

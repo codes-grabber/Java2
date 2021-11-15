@@ -11,7 +11,7 @@ Kangaroo(String name){
 
     @Override
     public void run(int dist) {
-        System.out.println(name + " run " + dist + " meter");
+        System.out.println(name + " run " + dist + " метров");
     }
 }
 

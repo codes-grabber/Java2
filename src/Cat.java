@@ -7,11 +7,11 @@ public class Cat implements JumpRunnable{
 
     @Override
     public void jump() {
-        System.out.println(name + " jump!");
+        System.out.println(name + " прыгнул");
     }
 
     @Override
     public void run(int dist) {
-        System.out.println(name + " run " + dist + " meter");
+        System.out.println(name + " run " + dist + " метров");
     }
 }
