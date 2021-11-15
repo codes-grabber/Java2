@@ -29,7 +29,45 @@ public class Main {
         tryJump(cat);
         tryRun(cat, 5);
 
+        //----------------------Функциональные интерфейсы--------------------/
+
+        Runnanle r = new Runnanle() {
+            @Override
+            public void run(int dist) {
+                System.out.println("run " + dist);
+            }
+        };
+            //аналогия (явное выражение)
+        Runnanle r1 = (dist) ->
+                System.out.println("run " + dist);
+
+
+        tryRun(r, 3);
+        tryRun(r1, 3);
+
+        //----------------------Функциональные интерфейсы--------------------\
     }
+
+
+//    JumpRunnable jr1 = new JumpRunnable() { //Реализуем методы в моменте. Для него создается отдельный анонимный класс в папке out
+//        @Override
+//        public void jump() {
+//            System.out.println("fdfdsfsfs");
+//        }
+//
+//        @Override
+//        public void run(int dist) {
+//            System.out.println("fdfsdfsf fs");
+//        }
+//    };
+
+
+
+
+
+
+
+
 
     static void tryRunAndJump (JumpRunnable r, int distance){
         r.run(distance);
