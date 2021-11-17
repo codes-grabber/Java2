@@ -29,6 +29,7 @@ public class Main {
 
     public static void checkArray(String[][] arr) {
         int maxCount = 0;
+
         for (int i = 0; i < arr.length; i++) {
             if (maxCount < arr[i].length) {
                 maxCount = arr[i].length;
