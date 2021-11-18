@@ -5,25 +5,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String a = "fff";
-        int another = Integer.parseInt(a);
-        System.out.println(another);
-
         int sum = 0;
 
         try{
             String[][] arr = new String[4][4];
-            checkArray(arr);
-            try{
-                changeArr(arr);
-            } catch (MyArrayDataException s){
+            String[][] arr1 = {
 
+                    {"1", "2", "1", "1"},
+
+                    {"1", "1", "1", "1"},
+
+                    {"1", "1", "3", "5"},
+
+                    {"1", "1", "3", "7"}
+
+            };
+            checkArray(arr1);
+            try{
+                changeArr(arr1);
+            } catch (MyArrayDataException s){
+                s.printStackTrace();
             }
 
         } catch (MyArraySizeException s){
             s.printStackTrace();
-            System.out.println(s.getHight());
-            System.out.println(s.getWeight());
         }
     }
 
@@ -31,11 +36,8 @@ public class Main {
         int maxCount = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            if (maxCount < arr[i].length) {
-                maxCount = arr[i].length;
-            }
-            if (arr.length != 4 || maxCount != 4) {
-                throw new MyArraySizeException("Массив некорректного размера!", arr.length, maxCount);
+            if (arr.length != 4 || arr[i].length != 4) {
+                throw new MyArraySizeException();
             }
         }
 
@@ -43,16 +45,19 @@ public class Main {
     }
 
     public static void changeArr(String[][] arr){
-        int maxCount = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (maxCount < arr[i].length) {
-                maxCount = arr[i].length;
-            }
-        }
-
-        for (int i = 0; i < arr.length; i++){
-            for (int j = 0; j <= maxCount; j++){
-                int another = Integer.parseInt(arr[i][j]);
+        for (int i = 0; i <= arr.length-1; i++){
+            for (int j = 0; j <= arr[i].length-1; j++){
+                try{
+                    int another = Integer.parseInt(arr[i][j]);
+                    if (j == arr[i].length-1){
+                        System.out.print(arr[i][j] + " ");
+                        System.out.println(" ");
+                    } else {
+                        System.out.print(arr[i][j] + " ");
+                    }
+                } catch (NumberFormatException e){
+                    throw new MyArrayDataException( i , j );
+                }
             }
         }
     }
