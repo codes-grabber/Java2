@@ -45,15 +45,18 @@ public class Main {
     }
 
     public static void changeArr(String[][] arr){
+        int sum = 0;
         for (int i = 0; i <= arr.length-1; i++){
             for (int j = 0; j <= arr[i].length-1; j++){
                 try{
-                    int another = Integer.parseInt(arr[i][j]);
+                    sum += Integer.parseInt(arr[i][j]);
                     if (j == arr[i].length-1){
                         System.out.print(arr[i][j] + " ");
                         System.out.println(" ");
                     } else {
                         System.out.print(arr[i][j] + " ");
+                    } if (i == arr.length-1 && j == arr[i].length-1){
+                        System.out.println(sum);
                     }
                 } catch (NumberFormatException e){
                     throw new MyArrayDataException( i , j );
