@@ -1,3 +1,6 @@
+import com.sun.org.apache.bcel.internal.generic.LineNumberGen;
+
+import java.beans.IntrospectionException;
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -72,6 +75,67 @@ public class Main {
 
         System.out.println(list.indexOf(2)); // вернет второй эл.т
         System.out.println(list.lastIndexOf(2)); // верней второй эл-т с конца
+
+
+
+
+        //----------связные списки--------
+
+        List<Integer> ll = new LinkedList<>(list);
+
+        Queue<String> queue = new LinkedList<>();
+        queue.add("sda");
+        queue.add("rew");
+        queue.add("sdtrea");
+        queue.add("tr");
+
+        for (int i = 0; i < 4; i++){
+            System.out.println(queue.remove());
+        }
+
+        Deque<Integer> stack = new LinkedList<>();  //Стак
+        stack.push(1);  //вставить элт в стак         как патрон в магазин
+        stack.push(2);
+        stack.push(6);
+        stack.push(9);
+
+        for (int i = 0; i < 4; i++){
+            System.out.println(stack.pop());  //получить эл.т
+        }
+
+        //----------Set-------
+        Set<Integer> set = new HashSet<>();  // хранит данные в виде массива
+
+        set.add(4);
+        set.add(5);
+        set.add(654);
+        set.add(65);
+        set.add(654424);
+        set.add(4);   //не добавит эллемонт потому что такой уже есть
+        System.out.println(set); // [65, 654424, 4, 5, 654] в случайном порядке
+
+        Set<Integer> set1 = new LinkedHashSet<>(); // хранит данные в виде массива
+
+        set1.add(4);
+        set1.add(5);
+        set1.add(654);
+        set1.add(65);
+        set1.add(654424);
+        set1.add(4);   //не добавит эллемонт потому что такой уже есть
+        System.out.println(set1); // [4, 5, 654, 65, 654424] сохранит порядок
+
+
+        Set<Integer> set2 = new TreeSet<>();
+
+        set2.add(4);
+        set2.add(5);
+        set2.add(654);
+        set2.add(65);
+        set2.add(654424);
+        set2.add(4);   //не добавит эллемонт потому что такой уже есть
+        System.out.println(set2); // [4, 5, 65, 654, 654424]в порядке возрастания
+
+
 
     }
 }
