@@ -192,7 +192,6 @@ public class Main {
 
         Thread timer = new Thread(new Runnable() {
             int seconds = 0;
-
             @Override
             public void run() {
                 while (!Thread.currentThread().isInterrupted()) { //был ли поднят флаг
